@@ -1,0 +1,34 @@
+---
+title: "Lista 3 - Workflow"
+author: "Victor Bessa"
+date: "2026-03-25"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Definir as pastas que serão criadas
+
+```{r}
+
+pastas <- c("data/raw", "data/processed", "scripts", "outputs", "paper")
+
+```
+
+# Criar as pastas 
+
+```{r}
+lapply(pastas, dir.create, recursive = TRUE)
+```
+
+# Criar os arquivos R vazios dentro da pasta scripts
+
+```{r}
+file.create("scripts/01_clean.R", "scripts/02_analysis.R")
+
+```
